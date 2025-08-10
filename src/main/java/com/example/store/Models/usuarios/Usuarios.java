@@ -1,14 +1,17 @@
 package com.example.store.Models.usuarios;
 
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "usuarios")
-@Table(name = "usuarios", schema = "pb")
+@Entity(name = "Usuarios")
+@Table(name = "usuarios")
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
+@NoArgsConstructor
 public class Usuarios {
 
     @Id
@@ -17,13 +20,12 @@ public class Usuarios {
 
     private String name;
 
-    @Column(unique = true)
     private String cpf;
 
     @Enumerated(EnumType.STRING)
     private ROLE role;
 
-    public Usuarios(@Valid DadosCadastroUsuarios dadosCadastroUsuarios) {
+    public Usuarios(DadosCadastroUsuarios dadosCadastroUsuarios) {
         this.name = dadosCadastroUsuarios.name();
         this.cpf = dadosCadastroUsuarios.cpf();
         this.role = dadosCadastroUsuarios.role();

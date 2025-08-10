@@ -2,6 +2,7 @@ package com.example.store.Controller;
 
 import com.example.store.Models.usuarios.DadosCadastroUsuarios;
 import com.example.store.Models.usuarios.DadosDetalhamentoUsuarios;
+import com.example.store.Models.usuarios.DadosListagemUsuarios;
 import com.example.store.Models.usuarios.Usuarios;
 import com.example.store.Repositories.UsuarioRepository;
 import jakarta.validation.Valid;
@@ -14,8 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -39,9 +38,8 @@ public class UsuariosController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DadosDetalhamentoUsuarios>> buscarTodos(@PageableDefault(size = 5) Pageable pageable) {
-       var page = usuarioRepository.findAllById(pageable).stream().map(DadosDetalhamentoUsuarios::new);
-
-       return ResponseEntity.ok(page);
+    public ResponseEntity<Page<DadosListagemUsuarios>> findAll(@PageableDefault(value = 5) Pageable pageable) {
+        var page = usuarioRepository.findAll(pageable).map(DadosListagemUsuarios::new);
+        return ResponseEntity.ok(page);
     }
 }

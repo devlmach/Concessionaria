@@ -1,4 +1,4 @@
-CREATE TABLE pb.products(
+create table carros(
 
     id SERIAL PRIMARY KEY,
     name varchar(20),
