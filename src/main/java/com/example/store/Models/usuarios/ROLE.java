@@ -4,6 +4,7 @@ public enum ROLE {
 
     GERENTE,
     VENDEDOR,
-    CLIENTE
+    CLIENTE,
+    TESTE
 
 }
