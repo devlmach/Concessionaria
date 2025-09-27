@@ -5,6 +5,7 @@ public enum ROLE {
     GERENTE,
     VENDEDOR,
     CLIENTE,
-    TESTE
+    TESTE,
+    NOVO_TESTE
 
 }
