@@ -22,12 +22,15 @@ public class Usuarios {
 
     private String cpf;
 
+    private String email;
+
     @Enumerated(EnumType.STRING)
     private ROLE role;
 
     public Usuarios(DadosCadastroUsuarios dadosCadastroUsuarios) {
         this.name = dadosCadastroUsuarios.name();
         this.cpf = dadosCadastroUsuarios.cpf();
+        this.email = dadosCadastroUsuarios.email();
         this.role = dadosCadastroUsuarios.role();
     }
 }

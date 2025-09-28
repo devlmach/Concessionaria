@@ -1,4 +1,4 @@
-create table pb.usuarios(
+create table usuarios(
 
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
