@@ -8,5 +8,4 @@ public enum ROLE {
     TESTE,
     NOVO_TESTE,
     MAIS_UM_TESTE
-
 }
