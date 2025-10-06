@@ -7,7 +7,5 @@ public enum ROLE {
     CLIENTE,
     TESTE,
     NOVO_TESTE,
-    MAIS_UM_TESTE,
-    MAIS_UM,
-    OUTRO
+    MAIS_UM_TESTE
 }
